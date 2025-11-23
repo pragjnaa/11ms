@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'master', url: 'https://github.com/tirucloud/Microservices-E-Commerce-eks-project.git'
+                git branch: 'master', url: 'https://github.com/tirucloud/11ms.git'
             }
         }
         stage("Docker Image Build") {
@@ -41,7 +41,7 @@ pipeline {
         }
         stage('Update Deployment file') {
             environment {
-                GIT_REPO_NAME = "Microservices-E-Commerce-eks-project"
+                GIT_REPO_NAME = "11ms"
                 GIT_EMAIL = "tirucloud@gmail.com"
                 GIT_USER_NAME = "tirucloud"
                 IMAGE_NAME = "shippingservice"
