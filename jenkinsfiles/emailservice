@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'master', url: 'https://github.com/arumullatirucloud/Microservices-E-Commerce-eks-project.git'
+                git branch: 'master', url: 'https://github.com/tirucloud/Microservices-E-Commerce-eks-project.git'
             }
         }
         stage("Docker Image Build") {
@@ -43,7 +43,7 @@ pipeline {
             environment {
                 GIT_REPO_NAME = "Microservices-E-Commerce-eks-project"
                 GIT_EMAIL = "tirucloud@gmail.com"
-                GIT_USER_NAME = "arumullatirucloud"
+                GIT_USER_NAME = "tirucloud"
                 IMAGE_NAME = "emailservice"
                 REPO_URL = "915951599902.dkr.ecr.us-east-1.amazonaws.com/emailservice"
                 YAML_FILE = "emailservice.yaml"
