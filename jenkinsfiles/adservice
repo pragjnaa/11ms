@@ -19,7 +19,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'master', url: 'https://github.com/tirucloud/11ms.git'
+                git branch: 'main', url: 'https://github.com/tirucloud/11ms.git'
             }
         }
 
