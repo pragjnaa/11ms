@@ -3,10 +3,10 @@ pipeline {
 
     environment {
         GIT_REPO_NAME = "11ms"
-        GIT_EMAIL = "tirucloud@gmail.com"
-        GIT_USER_NAME = "tirucloud"
+        GIT_EMAIL = "pragjnaa@gmail.com"
+        GIT_USER_NAME = "pragjnaa"
         IMAGE_NAME = "adservice"
-        REPO_URL = "915951599902.dkr.ecr.us-east-1.amazonaws.com/adservice"
+        REPO_URL = "241371257698.dkr.ecr.us-east-1.amazonaws.com/adservice"
         YAML_FILE = "adservice.yaml"
     }
 
@@ -19,7 +19,7 @@ pipeline {
 
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/tirucloud/11ms.git'
+                git branch: 'main', url: 'https://github.com/pragjnaa/11ms.git'
             }
         }
 
@@ -39,9 +39,9 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 915951599902.dkr.ecr.us-east-1.amazonaws.com
-                    docker tag adservice:latest 915951599902.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
-                    docker push 915951599902.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
+                    aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 241371257698.dkr.ecr.us-east-1.amazonaws.com
+                    docker tag adservice:latest 241371257698.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
+                    docker push 241371257698.dkr.ecr.us-east-1.amazonaws.com/adservice:${BUILD_NUMBER}
                     '''
                 }
             }
